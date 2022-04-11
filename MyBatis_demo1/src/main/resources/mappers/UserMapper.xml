@@ -5,7 +5,28 @@
 <mapper namespace="mapper.UserMapper">
     <!--int insertUser();-->
     <insert id="insertUser">
-        insert into t_user values(1,'张三','123',23,'女','hjhjkj@qq.com')
+        insert into t_user values(3,'ggg','44',45,'女','hj12651kj@qq.com')
     </insert>
+
+    <!--int deleteUser();-->
+    <delete id="deleteUser">
+        delete from t_user where id = 2
+    </delete>
+
+    <!--int updateUser();-->
+    <update id="updateUser">
+        update t_user set username = '张三' where id = 1
+    </update>
+
+    <!--User getUserById();-->
+    <select id="getUserById" resultType="pojo.User">
+        select * from t_user where id = 2
+    </select>
+
+    <select id="getAllUser" resultType="pojo.User">
+        select * from t_user
+    </select>
+
+
 
 </mapper>
